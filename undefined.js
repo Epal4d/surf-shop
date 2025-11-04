@@ -28,7 +28,7 @@ const isClothing = (item) => {
 }
 
 const isGear = (gear) => {
-    if (gear.type === "surfboard") {
+    if (gear.price === "surfboard") {
         return true
     }
 
