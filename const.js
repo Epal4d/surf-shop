@@ -22,7 +22,7 @@ const isSurfboard = (item) => {
 }
 
 const isBargain = (inventoryItem) => {
-    const returnValue = false
+    let returnValue = false
 
     if (inventoryItem.price < 50.00) {
         returnValue = true
@@ -32,7 +32,7 @@ const isBargain = (inventoryItem) => {
 }
 
 const isClothing = (item) => {
-    const returnValue = false
+    let returnValue = false
 
     if (item.type === "clothing") {
         returnValue = true
@@ -42,7 +42,7 @@ const isClothing = (item) => {
 }
 
 const isGear = (gear) => {
-    const returnValue = false
+    let returnValue = false
 
     if (gear.type === "surfboard") {
         returnValue = true
@@ -52,22 +52,22 @@ const isGear = (gear) => {
 }
 
 for (const surfProduct of inventory) {
-    const message = ""
+    let message = ""
 
     if (isClothing(surfProduct)) {
-        surfProduct = `${surfProduct.description} is a clothing product`
+        message = `${surfProduct.description} is a clothing product`
     }
 
     if (isBargain(surfProduct)) {
-        surfProduct = `${surfProduct.description} is currently on sale`
+        message = `${surfProduct.description} is currently on sale`
     }
 
     if (isSurfboard(surfProduct)) {
-        surfProduct = `${surfProduct.description} is a surfboard`
+        message = `${surfProduct.description} is a surfboard`
     }
 
     if (isGear(surfProduct)) {
-        surfProduct = `${surfProduct.description} is a surfing gear product`
+        message = `${surfProduct.description} is a surfing gear product`
     }
 
     if (message !== "") {
