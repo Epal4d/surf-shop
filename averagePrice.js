@@ -1,58 +1,5 @@
-import { inventory } from "./data"
-
-const isBargain = (inventoryItem) => {
-    let returnValue = false
-
-    if (inventoryItem.price < 50.00) {
-        returnValue = true
-    }
-
-    return returnValue
-}
-
-const isClothing = (item) => {
-    let returnValue = false
-
-    if (item.type === "clothing") {
-        returnValue = true
-    }
-
-    return returnValue
-}
-
-const isSurfbaord = (item) => {
-    let returnValue = false
-
-    if (item.type === "surfboard") {
-        returnValue = true
-    }
-
-    return returnValue
-}
-
-const isGear = (gear) => {
-    let returnValue = false
-
-    if (gear.type === "gear") {
-        returnValue = true
-    }
-
-    return returnValue
-}
-
-const convertDataForAccounting = (product) => {
-    const allUpperCase = `${product.description.toUpperCase()} - ${product.type.toUpperCase()} - ${product.price}`
-    return allUpperCase
-}
-
-const calculateAveragePrice = (products) => {
-    let total = 0
-    for (const items of products) {
-        total += items.price
-       }
-        const averagePrice = total / products.length
-    return averagePrice
-}
+import { inventory } from "./data.js"
+import { isBargain, isClothing, isGear, isSurfboard, convertDataForAccounting, calculateAveragePrice} from "./functions.js"
 
 for (let surfProduct of inventory) {
     let message = ""
@@ -66,7 +13,7 @@ for (let surfProduct of inventory) {
     }
 
 
-    if (isSurfbaord(surfProduct)) {
+    if (isSurfboard(surfProduct)) {
         message = `${surfProduct.description} is a surfboard`
     }
 
